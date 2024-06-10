@@ -1,0 +1,179 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block metadescription %}
+
+        This is the shopping cart page
+{% endblock %}
+{% block title %}
+Vegishop PVT LTD
+{% endblock %}
+{% block content %}
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto ">
+            <li class="nav-item active">
+              <a class="nav-link text-success" href="#">HOME <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-success"  href="{% url 'profile' %}" >PROFILE</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-success" data-toggle="modal" data-target="#registerModal">EDIT PROFILE</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-success" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                CATEGORY
+              </a>
+            
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            
+              {% for i in category %}
+              <a class="dropdown-item" href="/dry_fruit/{{i.id}}" name="item">{{ i.name }}</a>
+                          
+
+                          {% endfor %}
+            
+          </li>
+            <li class="nav-item">
+          
+              <a class="nav-link text-success" href="{% url 'cart:cart_detail' %}" ><i class="fa fa-shopping-cart" style="font-size: 24px;padding: 5px;"></i>({{item_count}})</a>
+            </li>
+           
+          </ul>
+          <ul class="navbar-nav ">
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa fa-search" ></i></button>
+          </form>
+          
+            <li class="nav-item">
+              <a class="nav-link text-success" href="{% url 'logout' %}">
+
+
+                 LOG OUT<i class="fa fa-sign-out" style="font-size:24px;padding-left: 10px;"></i></a>
+            
+          </li>
+        </ul>
+        </div>
+      </nav>
+      
+    </div> 
+
+    {% if not cart_items %}
+<div>
+    <div class="text-center">
+        <br>
+        <h1 class="text-center my_title">
+            Your shopping cart is Empty
+        </h1>
+        <br>
+        <p class="text-center">
+            Please Click <a href="#">Here</a>to continue shopping.
+
+        </p>
+
+
+    </div>
+</div>
+{% else %}
+<div>
+    <div class="text-center">
+        <br>
+        <h1 class="text-center my_title">
+            Your Shopping Cart
+        </h1>
+        <br>
+
+    </div>
+    <div class="row mx-auto">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-6 text-center">
+            <table class="table my_custom_table">
+                <thead class="my_custom_thead">
+                <tr>
+                    <th colspan="5">
+                        Your Items 
+                    </th>
+                </tr>
+
+                </thead>
+                <tbody>
+                {% for cart_item in cart_items %}
+                <tr>
+                    <td>
+                        <a href="#"><img src="{{cart_item.product.image.url}}" alt=""  class="float-left rounded custom_image" width="180px"></a>
+
+                    </td>
+                    <td class="text-left" style="padding: 30px;">
+                        <span style="font-weight: bolder;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">{{cart_item.product.name}}</span>
+                        <br>
+                        
+                        price:&nbsp;&nbsp;&nbsp;&nbsp;${{cart_item.product.price}}
+                        <br>
+                        Quantity:&nbsp;&nbsp;&nbsp;{{cart_item.quantity}} x $ {{cart_item.product.price}}
+
+                    </td>
+                    <td>
+                        $ {{cart_item.sub_total}}
+                    </td>
+                    {% if cart_item.quantity < cart_item.product.stock %}
+                    <td>
+                        <a href="{% url 'cart:add_cart' cart_item.product.id %}" class="custom_a"> <i class="fa fa-plus"></i></a>
+                            &nbsp;
+                            <a href="{% url 'cart:cart_remove' cart_item.product.id %}" class="custom_a"><i class="fa fa-minus"></i></a>
+                           &nbsp;
+                            <a href="{% url 'cart:full_remove' cart_item.product.id %}" class="custom_icon"><i class="fa fa-trash"></i></a>
+                    </td>
+                    {% else %}
+
+                            &nbsp;<a href="{% url 'cart:cart_remove' cart_item.product.id %}" class="custom_a"><i class="fa fa-minus"></i></a>
+                           &nbsp;<a href="{% url 'cart:full_remove' cart_item.product.id %}" class="custom_icon"><i class="fa fa-trash"></i></a>
+                    <td>
+                        {% endif %}
+
+                    </td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+        </div>
+        <div class="col-12 col-sm-12 col-md-12 col-lg-6 text-center">
+           <table class="table my_custom_table">
+                <thead class="my_custom_thead">
+                <tr>
+                    <th>
+                        Checkout
+                    </th>
+                </tr>
+
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        Please review your shopping items before processing with the order payment.
+                    </td>
+
+                </tr>
+                <tr>
+                    <td class="text_left">
+                        Your Total is:<strong>{{ total }}</strong>
+                    </td>
+                </tr>
+                </tbody>
+
+            </table>
+            <div class="row">
+                <div class="col"><a href="{% url 'user_home' %}" class="btn btn-success btn-block my_custom_button">CONTINU SHOPPING</a></div>
+                <div class="col"><a href="#" class="btn btn-success btn-block my_custom_button">CHECK OUT</a></div>
+                
+            </div>
+           
+            {% endif %}
+        </div>
+
+    </div>
+
+</div>
+
+
+
+{% endblock %}

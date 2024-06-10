@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% load static %}
+  <link rel="icon" type="image/x-icon" href="{% static 'images/SRS.png' %}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User/Edit_Profile</title>
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'images/srs.png' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+
+        img{
+            
+            border-radius: 75%;
+            box-shadow: 5px 10px 5px 5px #19A818;
+
+        }
+        .s1{
+
+            margin-top: 30px;
+            border: 2px solid #19A818;
+            padding: 15px;
+            font-family: Lucida Handwriting;
+            
+            border-radius: 20px;
+        }
+       input[type=button]
+  {
+ background-color:#19A818;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 10px;
+  
+  align-items: center;
+  align-self: center;
+  
+}
+button{
+  background-color:#19A818;
+          color: white;
+          padding: 14px 20px;
+          text-align: center;
+         
+         border: none;
+         
+         border-radius: 20px;
+         text-decoration: none;
+}
+    </style>
+</head>
+<body style="margin-top: 30px;">
+    <div style="margin-left: 10%;">
+      <img src="{% static 'images/SRS.png' %}" width="80px" style="border-radius: 20px;box-shadow: 5px 5px 2px 2px #00053D;margin-left: 40%;">
+</div>
+    <div class="s1">
+    
+        
+        <form action="/edit_profile_details/{{ customer.id }}" class="was-validated" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+              <h2 style="text-align: center;margin-top: 15px;color:#19A818;">UPDATE PROFILE</h2>
+              <div class="form-group">
+                  <label for="fname">First Name:</label>
+                  <input type="text" class="form-control" placeholder="Enter first name" name="fname" value="{{customer.fname}}">
+                  
+      
+                </div>
+                <div class="form-group">
+                  <label for="lname">Last Name:</label>
+                  <input type="text" class="form-control" placeholder="Enter last name" name="lname" value="{{customer.lname}}">
+                 
+      
+                </div>
+                <div class="form-group">
+                  <label for="username"> Username:</label>
+                  <input type="text" class="form-control" placeholder="Enter Username" name="username" value="{{customer.username}}">
+              
+      
+                </div>
+                <div class="form-group">
+                  <label for="email">Address:</label>
+                  <input type="text" class="form-control" placeholder="Enter address" name="address" value="{{customer.Address}}">
+               
+        
+                </div>
+                  
+              <div class="form-group">
+                <label for="email">Email address:</label>
+                <input type="email" class="form-control" placeholder="Enter email" name="email" value="{{customer.email}}">
+             
+      
+              </div>
+              <div class="form-group">
+                <label for="email">Contact Number:</label>
+                <input type="number" class="form-control" placeholder="Enter contact number" name="phone" value="{{customer.phone}}">
+              
+      
+              </div>
+              <div class="form-group">
+                <label for="email">DOB:</label>
+                <input type="date" class="form-control" placeholder="Enter DOB" name="dob" value="{{customer.dob}}">
+                
+      
+              </div><br>
+              {% if customer.Photo %}
+
+              <img src="{{ customer.Photo.url}}" width="50px"><br><br>
+              
+          {% else %}
+          
+              <img src="https://www.genocideresearchhub.org.rw/wp-content/uploads/2021/12/1024px-User-avatar.svg_.png" width="20px">
+               {% endif %}
+              <div class="form-group">
+                <label for="email">Upload Image:</label>
+                <input type="file"  placeholder="Enter email" name="img" accept="image/">
+               
+      
+              </div>
+             
+                <div class="form-group form-check">
+                    <label class="form-check-label">
+                      <input class="form-check-input" type="checkbox"> Remember me
+                    </label>
+                  </div>
+                  <button type="submit" style="width: 100%;" onclick="myFunction()">UPDATE</button><br><br>
+                  <div>
+              </form>
+
+              <script>
+                function myFunction() {
+                  alert("Profile updated Successfully!");
+                }
+                </script>
+      
+</div>
+</div><br>
+<input type=button value="Previous Page" onClick="javascript:history.go(-1);">  
+</body>
+</html>

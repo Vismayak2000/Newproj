@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+       Search results
+    </title>
+    {% load static %}
+    
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'images/SRS.png' %}">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+        
+      <style>
+        .style1
+      {
+        background-image: url(https://www.magneticmemorymethod.com/wp-content/uploads/2020/12/book-1024x640.jpg);
+        background-size: cover;
+        height: 300px;
+        background-repeat: no-repeat;
+        box-shadow: 5px 5px 2px 2px #00053D;
+      }
+       .popover-title {
+    background-color: #73AD21; 
+    color: #FFFFFF; 
+    font-size: 28px;
+    text-align:center;
+  }
+       .nav-link{
+        
+        font-size: 15px;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-weight:bolder;
+        padding: auto;
+        text-shadow: 8px 10px 5px  #000000;
+       }
+       .navbar-custom {
+  height: 90px;
+ 
+}
+
+button{
+  background-color:#19A818;
+          color: white;
+          padding: 14px 14px;
+          text-align: center;
+         
+         border: none;
+         
+         
+         text-decoration: none;
+}
+label,input{
+  color: #19A818;
+}
+.dropdown-menu{
+  border: 2px #19A818 solid;
+}
+.dropdown-item:hover{
+  color: white;
+  background-color: #19A818;
+}
+card{
+  box-shadow: #19A818;
+}
+.card:hover
+{
+  
+  border-color: #19A818;
+  
+}
+.page-link{
+  color: #19A818;
+}
+.page-link:hover{
+  background-color: #19A818;
+  color: aliceblue;
+}
+.center
+        {
+          position: absolute;
+          bottom:6px;
+          
+          padding-top:2px;
+          padding-bottom: 2px;
+          font-weight: bolder;
+          font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+          
+          color: aliceblue;
+          font-size: 1vw;
+          background-color: #19A818;
+        }
+        .col{
+          padding: 10px;
+        }
+        .card-img-overlay
+        {
+          opacity: 0;
+        }
+        .card-img-overlay:hover{
+          opacity: 1;
+        }
+        .animate{
+          
+          margin-left: 50%;
+          
+          
+  animation: rotation 8s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+h1 span {
+        position: relative;
+        top: 20px;
+        display: inline-block;
+        animation: bounce .3s ease infinite alternate;
+        font-family: 'Titan One'cursive;
+        font-size: 80px;
+        color: #fff;
+        text-shadow: 0 1px 0 green,
+            0 2px 0 green,
+            0 3px 0 green,
+            0 4px 0 green,
+            0 5px 0 green,
+            0 6px 0 transparent,
+            0 7px 0 transparent,
+            0 8px 0 transparent,
+            0 9px 0 transparent,
+            0 10px 10px rgba(0, 0, 0, 0.4);
+    }
+  
+    h1 span:nth-child(2) {
+        animation-delay: .1s;
+    }
+  
+    h1 span:nth-child(3) {
+        animation-delay: .2s;
+    }
+    h1 span:nth-child(4) {
+        animation-delay: .3s;
+    }
+  
+    h1 span:nth-child(5) {
+        animation-delay: .4s;
+    }
+  
+    h1 span:nth-child(6) {
+        animation-delay: .5s;
+    }
+  
+    h1 span:nth-child(7) {
+        animation-delay: .6s;
+    }
+  
+    h1 span:nth-child(8) {
+        animation-delay: .7s;
+    }
+  
+    @keyframes bounce {
+        100% {
+            top: -20px;
+            text-shadow: 0 1px 0 #CCC,
+                0 2px 0 #CCC,
+                0 3px 0 #CCC,
+                0 4px 0 #CCC,
+                0 5px 0 #CCC,
+                0 6px 0 #CCC,
+                0 7px 0 #CCC,
+                0 8px 0 #CCC,
+                0 9px 0 #CCC,
+                0 50px 25px rgba(0, 0, 0, 0.2);
+        }
+    }
+
+
+      </style>
+</head>
+<body >
+ 
+    <div class="container-fluid">
+      <div class="style1">
+          <nav class="navbar sticky-top navbar-expand-lg ">
+              <div class="container-fluid">
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                  <a class="navbar-brand" href="#"><img src="{% static 'images/SRS.png' %}" width="80px" style="border-radius: 20px;box-shadow: 5px 5px 2px 2px #00053D;" class="animate"></a>
+               </div>
+               </div>
+            </nav>
+             
+            <div >
+              <div style="padding: 10px;font-family: Lucida Handwriting;text-align: center;">
+            
+            <h1 style="color: white;">
+              <span>S</span>
+              <span>R</span>
+              <span>S</span>
+              <span>&nbsp;</span>
+              <span>L</span>
+              <span>I</span>
+              <span>B</span>
+              <span>R</span>
+              <span>A</span>
+              <span>R</span>
+              <span>Y</span>
+              
+          </h1>
+            
+          </div>
+          </div>
+      </div>   
+
+</div>
+
+    
+     
+<div class="container" style="background-color: aliceblue;padding: 20px;margin-top: 20px;">
+    <div class="row">
+        <div class="col-sm-2">
+            
+                <div class="card " style="width: 15rem;">
+                    {% if book.Photo %}
+                    <img class="card-img-top"
+                    src="{{ book.Photo.url}}"  height="250px" class="img-thumbnail">
+                  
+                {% else %}
+                
+                    <img src="https://www.genocideresearchhub.org.rw/wp-content/uploads/2021/12/1024px-User-avatar.svg_.png" width="20px">
+                    {% endif %}
+                      <div class="card-body">
+                      <h5 style="text-align: center;"><label style="border-radius: 10%;padding: 5px;border: 2px solid #19A818;">Available</label></h5>
+            </div>
+        </div>
+    </div>
+   
+    <div style="margin-left: 100px;">
+        <h2 >{{book.Name}}</h2>
+        <h6>Author :{{book.Author}}</h6>
+        <div class="row">
+            <div class="col">
+                <table class="table  table-hover text-center ">
+        <thead>
+            <tr>
+                <th> ID</th>
+                <th>CATEGORY</th>
+                <th>YEAR OF PUBLISH</th>
+                <th>LANGUAGE</th>
+                <th> AVALABILE COPIES</th>
+                <th> READING PRICE</th>
+                
+                
+                
+               
+                
+                
+                
+            </tr>
+        </thead>
+        <tbody>
+            
+            <tr style="text-align: center;">
+                <td>{{ book.id }}</td>
+            
+                <td>{{ book.category.name }}</td>
+               
+                <td>{{ book.year }}</td>
+                <td>{{ book.language }}</td>
+                <td>{{ book.stock}}</td>
+                <td>{{ book.price}}</td>
+                
+                
+               
+
+            </tr>
+                           
+        </tbody>
+    </table><br>
+    </div>
+</div>
+
+<div style="margin-left: 500px;">
+<a  href="{% url 'request_issue' book.id %}"><button type="submit" onclick="myFunction()">REQUEST ISSUE</button></a>   
+                    <a  href="{% url 'user_home' %}"><button type="submit">SEARCH ANOTHER</button></a>
+                </div>
+ </div>               
+</div>
+<script>
+  function myFunction() {
+    alert("Issue request send Sucessfully!");
+  }
+  </script> 
+<span style="padding: 10px;">
+{{books.desc}}</span><br><br>
+      
+
+
+
+
+</div>
+
+
+<div class="container-fluid">
+<div class="footer" style="background-color: #19A818;text-align: center;padding: 10px;">
+<img src="{% static 'images/srs.png' %}" width="50px" style="border-radius: 10px;box-shadow: 5px 5px 2px 2px #00053D;">&nbsp;&nbsp;&nbsp;&nbsp;
+ &copy; SRS Colleged.All rights Reserved
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+       SRS LIBRARY
+    </title>
+    {% load static %}
+    
+    
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'images/SRS.png' %}">
+    <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+        
+        
+        
+      <style>
+        .style1
+      {
+        background-image: url(https://www.magneticmemorymethod.com/wp-content/uploads/2020/12/book-1024x640.jpg);
+        background-size: cover;
+        height: 600px;
+        background-repeat: no-repeat;
+        box-shadow: 5px 5px 2px 2px #00053D;
+      }
+       .popover-title {
+    background-color: #73AD21; 
+    color: #FFFFFF; 
+    font-size: 28px;
+    text-align:center;
+  }
+       .nav-link{
+        
+        font-size: 15px;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-weight:bolder;
+        padding: auto;
+        text-shadow: 8px 10px 5px  #000000;
+       }
+       .navbar-custom {
+  height: 90px;
+ 
+}
+.nav-link:hover{
+  background-color: #19A818;
+}
+button{
+  background-color:#19A818;
+          color: white;
+          padding: 14px 20px;
+          text-align: center;
+          font-family: Lucida Handwriting;
+         border: none;
+         
+         border-radius: 20px;
+         text-decoration: none;
+}
+label,input{
+  color: #19A818;
+  font-family: Lucida Handwriting;
+}
+.dropdown-menu{
+  border: 2px #19A818 solid;
+}
+.dropdown-item:hover{
+  color: white;
+  background-color: #19A818;
+}
+card{
+  box-shadow: #19A818;
+}
+.card:hover
+{
+  
+  border-color: #19A818;
+  
+}
+.page-link{
+  color: #19A818;
+}
+.page-link:hover{
+  background-color: #19A818;
+  color: aliceblue;
+}
+@media only screen and (max-width: 620px) {
+  /* For mobile phones: */
+  .container, .container-fluid, .table {
+    width: 100%;
+  }
+}
+.center
+        {
+          position: absolute;
+          bottom:6px;
+          
+          padding-top:2px;
+          padding-bottom: 2px;
+          font-weight: bolder;
+          font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+          
+          color: aliceblue;
+          font-size: 1vw;
+          background-color: #19A818;
+        }
+        .col{
+          padding: 10px;
+        }
+        .card-img-overlay
+        {
+          opacity: 0;
+        }
+        .card-img-overlay:hover{
+          opacity: 1;
+        }
+        .animate{
+          
+          margin-left: 50%;
+          
+          
+  animation: rotation 8s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+h1 span {
+        position: relative;
+        top: 20px;
+        display: inline-block;
+        animation: bounce .3s ease infinite alternate;
+        font-family: 'Titan One'cursive;
+        font-size: 6vw;
+        color: #fff;
+        text-shadow: 0 1px 0 green,
+            0 2px 0 green,
+            0 3px 0 green,
+            0 4px 0 green,
+            0 5px 0 green,
+            0 6px 0 transparent,
+            0 7px 0 transparent,
+            0 8px 0 transparent,
+            0 9px 0 transparent,
+            0 10px 10px rgba(0, 0, 0, 0.4);
+    }
+  
+    h1 span:nth-child(2) {
+        animation-delay: .1s;
+    }
+  
+    h1 span:nth-child(3) {
+        animation-delay: .2s;
+    }
+    h1 span:nth-child(4) {
+        animation-delay: .3s;
+    }
+  
+    h1 span:nth-child(5) {
+        animation-delay: .4s;
+    }
+  
+    h1 span:nth-child(6) {
+        animation-delay: .5s;
+    }
+  
+    h1 span:nth-child(7) {
+        animation-delay: .6s;
+    }
+  
+    h1 span:nth-child(8) {
+        animation-delay: .7s;
+    }
+  
+    @keyframes bounce {
+        100% {
+            top: -20px;
+            text-shadow: 0 1px 0 #CCC,
+                0 2px 0 #CCC,
+                0 3px 0 #CCC,
+                0 4px 0 #CCC,
+                0 5px 0 #CCC,
+                0 6px 0 #CCC,
+                0 7px 0 #CCC,
+                0 8px 0 #CCC,
+                0 9px 0 #CCC,
+                0 50px 25px rgba(0, 0, 0, 0.2);
+        }
+    }
+
+
+      </style>
+   
+</head>
+<body>
+  
+ 
+   
+   <!--<div class="container-fluid">
+    1
+      <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light navbar-custom">
+         <a class="navbar-brand" href="#"><img src="data:image/png;base64,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" width="250px"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto ">
+            <li class="nav-item active">
+              <a class="nav-link text-success" href="#">HOME <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-success"  data-toggle="modal" data-target="#loginModal" >SIGN IN</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-success" data-toggle="modal" data-target="#registerModal">SIGN UP</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-success" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                CATEGORY
+              </a>
+             
+          </ul>
+          <ul class="navbar-nav ">
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa fa-search" ></i></button>
+          </form>
+          <li class="nav-item">
+            <a class=" nav-link text-success " data-toggle="modal"  href="#loginModal" ><i class="fa fa-shopping-cart" style="font-size: 24px;padding: 5px;"></i></a>
+          </li>
+        </ul>
+        </div>
+      </nav>
+      
+    </div> -->
+    <div class="container-fluid">
+     
+      <div class="style1">
+        
+        <div class="container">
+          <div class="messages" id="alert-message" style="background-color: white;color:rgb(181, 16, 16);padding: 5px;border-radius: 20px;margin-left: 410px;margin-right: 400px;text-align: center;">
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} mb-0 alert-dismissible fade show" role="alert">
+          {{ message }}
+         
+        </div>
+        {% endfor %} 
+      </div>
+      <script type="text/javascript"> 
+          $(function(){
+          setTimeout(function(){
+              $("#alert-message").hide();
+              }, 3000);
+            });
+          </script>
+      </div> 
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top  navbar-custom">
+              
+                
+                  <a class="navbar-brand" href="#"><img src="{% static 'images/SRS.png' %}" width="80px" style="border-radius: 20px;box-shadow: 5px 5px 2px 2px #00053D;" class="animate"></a>
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto ">
+                  <li class="nav-item ">
+                    <a class="nav-link  text-white" href="#" style="margin-left: 80px;font-family: Lucida Handwriting;font-size: larger;font-weight: bolder;">The library that 'delivers' , since 2013 </a>
+                  </li>
+                  </ul>
+                  <ul class="navbar-nav ">
+                  <li class="nav-item active">
+                    <a class="nav-link text-success bg-light" href="#">HOME <span class="sr-only">(current)</span></a>
+                  </li>
+                  
+                   
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      FACILITES
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="#">LIBRARY</a>
+                      <a class="dropdown-item" href="#">HOSTALS</a>
+                      
+                      <a class="dropdown-item" href="#">MEDIA LAB</a>
+                   </div> 
+                  </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-white" href="#section1">ABOUT</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-white" href="#section2">CONTACT US</a>
+                    </li>
+                
+             
+               
+                  <li class="nav-item"><a class="nav-link text-white" data-toggle="modal" data-target="#loginModal" ><span class="fa fa-user" style="padding-right: 5px;"></span>SIGN IN </a></li>
+                  <li class="nav-item"><a class="nav-link text-white" data-toggle="modal" data-target="#registerModal"><span class="fa fa-user-plus"  style="padding-right: 5px;"></span> SIGN UP</a></li>
+                </ul>
+              </div>
+            </nav>
+            
+            <div class="animate" >
+              <img src="{% static 'images/SRS.png' %}" width="160px" style="border-radius: 20px;">
+            </div> 
+            
+            <div >
+              
+              <div style="padding: 20px;font-family: Lucida Handwriting;">
+            <h5 style="color: white;">ARE YOU SEARCHING A BOOK......?</h5><br>
+            <h1 style="color: white;">
+              <span>S</span>
+              <span>R</span>
+              <span>S</span>
+              <span>&nbsp;</span>
+              <span>L</span>
+              <span>I</span>
+              <span>B</span>
+              <span>R</span>
+              <span>A</span>
+              <span>R</span>
+              <span>Y</span>
+              
+          </h1>
+            <form action="#" method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+            <input type="text" name="search" placeholder="Search book">
+            <a data-toggle="modal" href="#loginModal">
+            <!--<i class="fa fa-search" style="font-size: 24px;padding: 5px;background-color: #55A209;color: #D66A12"></i>-->
+            <input type="submit" value="SEARCH" style="box-shadow: 2px 5px #D66A12;"></a>
+          </form>
+          </div>
+          </div>
+      </div>   
+
+
+
+    
+     
+
+
+    <div class="container" style="padding-top: 50px;font-family: Lucida Handwriting;">
+      <div style="text-align: center;">
+      <h2 >Welcome To SRS Library</h2>
+      Welcome to the most popular Library<br>
+      -----------------------<i class="fa fa-book" style="font-size: 18px;padding: 5px;"></i> -----------------------
+    </div><br><br>
+      <div class="card-deck">
+      <div class="card" style="width:200px" data-toggle="popover" title="ON ORDER OVER 500">
+        
+        <img class="card-img-top" src="https://cdn.shopify.com/s/files/1/0051/6250/0170/files/Fast_delivery_c928b539-7191-4f85-814e-c4167928d29b_200x.png?v=1622547299" alt="Card image" style="width:5vw;margin: auto;padding-top: 10px;">
+        <div class="card-body">
+          <h6 class="card-title" style="text-align: center;" >FREE SHIPPING</h6>
+          
+         
+        </div>
+      </div>
+      <div class="card" style="width:200px" data-toggle="popover" title="PRODUCT WELL PACKAGE" >
+        
+        <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0Q3P0_YTPYN4ppJBSAEiicQjoZUYMPPUs8Q&usqp=CAU" alt="Card image" style="width:5vw;margin: auto;padding-top: 10px;">
+        <div class="card-body">
+          <h6 class="card-title" style="text-align: center;">EBOOKS</h6>
+          
+         
+        </div>
+      </div>
+      <div class="card" style="width:200px" data-toggle="popover" title="QUALITY PRODUCTS">
+        
+        <img class="card-img-top" src="data:image/jpeg;base64,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" alt="Card image" style="width:5vw;margin: auto;padding-top: 10px;">
+        <div class="card-body">
+          <h6 class="card-title" style="text-align: center;"   >AUDIO BOOKS</h6>
+          
+         
+        </div>
+      </div>
+      <div class="card" style="width:200px" data-toggle="popover" title="24/7 SUPPORT">
+        
+        <img class="card-img-top" src="https://jinpiin.com/wp-content/uploads/2021/01/icon004.png" alt="Card image" style="width:5vw;margin: auto;padding-top: 10px;">
+        <div class="card-body">
+          <h6 class="card-title" style="text-align: center;" data-toggle="popover" title="QUALITY PRODUCTS">SUPPORT</h6>
+          
+         
+        </div>
+      </div>
+    
+ </div> 
+ 
+</div><br><br><br>
+
+
+
+<div id="registerModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+  <div class="modal-content">
+   
+      <div class="modal-body">
+        <img src="{% static 'images/SRS.png' %}" width="80px" style="border-radius: 20px;box-shadow: 5px 5px 2px 2px #00053D;margin-left: 40%;">
+        <button type="button" class="close" data-dismiss="modal"> &times;</button>
+        <form action="{% url 'usercreate' %}" class="was-validated" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+          <h2 style="text-align: center;color:#19A818;font-family: Lucida Handwriting;margin-top: 30px;">SIGN UP</h2>
+          <div class="form-group">
+              <label for="fname">First Name:</label>
+              <input type="text" class="form-control" placeholder="Enter first name" name="fname" id="fname" pattern="[A-Z][a-zA-Z0-9-_]+" title="First charcter must be capital" required>
+              <div class="valid-feedback">Valid.</div>
+              <div class="invalid-feedback">Please fill out this field.</div>
+  
+            </div>
+            <div class="form-group">
+              <label for="lname">Last Name:</label>
+              <input type="text" class="form-control" placeholder="Enter last name" name="lname" id="lname" pattern="[A-Z][a-zA-Z0-9-_]+" title="First charcter must be capital" required>
+              <div class="valid-feedback">Valid.</div>
+             <div class="invalid-feedback">Please fill out this field.</div>
+  
+            </div>
+           
+  
+           
+            <div class="form-group">
+              <label for="email">Address:</label>
+              <input type="text" class="form-control" placeholder="Enter address" name="address" id="address" required>
+              <div class="valid-feedback">Valid.</div>
+        <div class="invalid-feedback">Please fill out this field.</div>
+    
+            </div>
+              
+          <div class="form-group">
+            <label for="email">Email address:</label>
+            <input type="email" class="form-control" placeholder="Enter email" name="email" id="email" required>
+            <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback">Please fill out this field.</div>
+  
+          </div>
+          <div class="form-group">
+            <label for="email">Contact Number:</label>
+            <input type="text" class="form-control" placeholder="Enter contact number" name="phone" id="phone" pattern="[7-9]{1}[0-9]{9}" 
+            title="Phone number with 7-9 and remaing 9 digit with 0-9" required>
+            <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback">Please fill out this field.</div>
+  
+          </div>
+          <div class="form-group">
+            <label for="email">DOB:</label>
+            <input type="date" class="form-control" placeholder="Enter DOB" name="dob" id="dob" required>
+            <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback">Please fill out this field.</div>
+  
+          </div>
+          <div class="form-group">
+            <label for="email">Upload Image:</label>
+            <input type="file" class="form-control"  placeholder="Enter email" name="img"  accept="image/"   required>
+            <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback">Please fill out this field.</div>
+  
+          </div>
+          <div class="form-group">
+            <label for="email">Password:</label>
+            <input type="text" class="form-control"   name="psw"   id="psw"  onclick="fun1()" required>
+            <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback">Please fill out this field.</div>
+         </div>
+          <label >Password Suggections:</label><br>
+          
+          <input type="text" id="exp" name="passw" onclick="fun2()" style="width: 150px;border: #fff;">
+          <input type="text" id="exp1" name="passw" onclick="fun3()" style="width: 150px;border: #fff;">
+          <input type="text" id="exp2" name="passw" onclick="fun4()" style="width: 150px;border: #fff;"><br><br>
+          
+          <div class="form-group form-check">
+            <label class="form-check-label">
+              <input class="form-check-input" type="checkbox"> Remember me
+            </label>
+          </div>
+          <button type="submit" style="width: 100%;" onclick="sus()">SIGN UP</button><br><br>
+          <div>
+              <a href="sign_in.html" style="color: rgb(8, 2, 2);font-family: Lucida Handwriting;">Already have an Account?</a>
+              <a href="#"data-toggle="modal" data-target="#loginModal" style="color:#19A818; padding-left: 10px;font-family: Lucida Handwriting;"><b>Sign In</b></a>
+              </div><br>
+        </form>
+        
+      </div>
+<!--
+      <div class="modal-footer">
+          <div style="padding:10px"></div>
+      </div>
+-->
+  </div>
+  </div>
+</div>
+
+
+         
+        
+  <!--
+        <div class="modal-footer">
+            <div style="padding:10px"></div>
+        </div>
+  -->
+  
+    <script>
+        var myInput = document.getElementById("psw");
+        var letter = document.getElementById("letter");
+        var capital = document.getElementById("capital");
+        var number = document.getElementById("number");
+        var length = document.getElementById("length");
+        var fname=document.getElementById("fname")
+        function sus() {
+          fname=document.getElementById("fname").value
+          lname=document.getElementById("lname").value
+          email=document.getElementById("email").value
+         
+           
+        }
+             
+          function sus1(){
+              msg=document.getElementById("msg").value
+              name=document.getElementById("name").value
+              psw=document.getElementById("pwd").value
+             
+           
+ 
+              
+                  
+                 
+                 
+
+            
+          }      
+          
+
+
+               
+              
+        function fun1()
+        {
+          var lname = document.getElementById("lname").value;
+          var fname = document.getElementById("fname").value;
+          var email = document.getElementById("email").value;
+          var dob = document.getElementById("dob").value;
+          var phone = document.getElementById("phone").value;
+          p=fname.slice(0,2).toUpperCase()
+          n=phone.slice(6,9)
+          pass1=p+"@"+n+"sr"
+          p1=fname.slice(2,3).toUpperCase()
+          n1=phone.slice(5,8)
+          f=lname.slice(0,2).toUpperCase()
+          pass2=p1+n1+"r#"+f
+          p2=fname.slice(2,3).toUpperCase()
+          n2=phone.slice(5,7)
+          d=dob.slice(0,1)
+          f1=lname.slice(0,2).toUpperCase()
+          pass3=f+n1+"$#"+p2+d
+       document.getElementById("exp").value = pass1
+       document.getElementById("exp1").value = pass2
+       document.getElementById("exp2").value = pass3
+       
+         document.getElementById("passw").value=fname
+        }
+        function fun2()
+        {
+          var pass1 = document.getElementById("exp").value;
+          document.getElementById("psw").value=pass1
+          
+        }
+        function fun3()
+        {
+          var pass1 = document.getElementById("exp1").value;
+          document.getElementById("psw").value=pass1
+          
+        }
+        function fun4()
+        {
+          var pass1 = document.getElementById("exp1").value;
+          document.getElementById("psw").value=pass1
+          
+        }
+        // When the user clicks on the password field, show the message box
+        myInput.onfocus = function() {
+          document.getElementById("message").style.display = "block";
+        }
+        
+        // When the user clicks outside of the password field, hide the message box
+        myInput.onblur = function() {
+          document.getElementById("message").style.display = "none";
+        }
+        
+        // When the user starts to type something inside the password field
+        myInput.onkeyup = function() {
+          // Validate lowercase letters
+          var lowerCaseLetters = /[a-z]/g;
+          if(myInput.value.match(lowerCaseLetters)) {  
+            letter.classList.remove("invalid");
+            letter.classList.add("valid");
+          } else {
+            letter.classList.remove("valid");
+            letter.classList.add("invalid");
+          }
+          
+          // Validate capital letters
+          var upperCaseLetters = /[A-Z]/g;
+          if(myInput.value.match(upperCaseLetters)) {  
+            capital.classList.remove("invalid");
+            capital.classList.add("valid");
+          } else {
+            capital.classList.remove("valid");
+            capital.classList.add("invalid");
+          }
+        
+          // Validate numbers
+          var numbers = /[0-9]/g;
+          if(myInput.value.match(numbers)) {  
+            number.classList.remove("invalid");
+            number.classList.add("valid");
+          } else {
+            number.classList.remove("valid");
+            number.classList.add("invalid");
+          }
+          
+          // Validate length
+          if(myInput.value.length >= 8) {
+            length.classList.remove("invalid");
+            length.classList.add("valid");
+          } else {
+            length.classList.remove("valid");
+            length.classList.add("invalid");
+          }
+        }
+        
+        </script>
+  </div>
+
+</div>
+
+
+
+<div class="container-fluid" style="background-image: url(https://w0.peakpx.com/wallpaper/305/324/HD-wallpaper-library-table-book-laptop-bookcase.jpg);background-repeat: no-repeat;background-size: cover;">
+  <div style="text-align: center;font-family: Lucida Handwriting;color: aliceblue;padding: 20px;">
+    <h2 >LATEST ARRIVALS</h2>
+    <br>
+    -----------------------<i class="fa fa-book" style="font-size: 18px;padding: 5px;"></i> -----------------------
+  </div><br><br>
+  <div class="container" style="text-align: center;">
+    <div class="card-columns" >
+      {% for i in books %}
+      <a data-toggle="modal" href="#loginModal">
+          <div class="card " style="width: 15rem;">
+            {% if i.Photo %}
+            <img class="card-img-top"
+            src="{{ i.Photo.url}}"  height="250px" class="mx_auto">
+          
+        {% else %}
+        
+            <img src="https://www.genocideresearchhub.org.rw/wp-content/uploads/2021/12/1024px-User-avatar.svg_.png" width="20px">
+            {% endif %}
+              <div class="card-body">
+              <h5 class="card-title" style="text-align: center;font-family: Lucida Handwriting;">{{i.Name}}</h5>
+              
+            </a>
+             
+              </div>
+          </div>
+       {% endfor %}  
+    
+      </div>
+      <div class="mx_auto">
+        {% if books.paginator.num_pages > 1 %}
+        <hr>
+        <div class="text-center">
+            {% for pg in books.paginator.page_range %}
+              <a href="?page={{pg}}" class="btn btn-light btn-sm {% if products.number == pg %} active {% endif %}">{{pg}}</a>
+            {% endfor %}
+        </div>
+                 {% endif %}
+
+    </div>
+  </div>
+
+
+
+
+<div id="section1">
+  <div class="container-fluid" style="margin-top: 40px;background-color: antiquewhite;font-family: Lucida Handwriting;">
+    <div class="row" style="text-align: center;">
+      <div class="col">
+        <div class="container">
+        <iframe width="100%" height="350vw" src="https://www.youtube.com/embed/B4_q9NpkPgE" title="Beautiful View of Our SRS Group of Institutions, Chitradurga" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+      <div class="col">
+        <h1 style="margin-top: 20px;text-align: center;">ABOUT <span style="color: #1892a8;">SRS LIBRARY</span></h1>
+        <p style="font-size: 15px;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;font-weight: bold;margin-top: 20px;">As one of the world's premier academic and research institutions, the Modern University has driven new ways of thinking since our founding. Today, we represent an intellectual destination that draws inspired scholars to our local and international campuses, keeping us at the nexus of ideas that challenge and change the world and provide companies with new specialists.</p>
+   <br><br> <button type="button" style="border-radius: 10px;border: 0px #1892a8; 
+   background-color: #1892a8;color: aliceblue;padding: 10px;font-weight: bolder;font-size: 15px;">Learn More-></button>
+    </div>
+    </div>
+  </div>
+
+</div>
+
+
+<div id="section2">
+<div class="container-fluid" style="background-color: #107096;margin: auto;padding: 20px; margin-top: 20px;font-family: Lucida Handwriting;background-size: 100%;">
+<div class="card-duck">
+  <table class="table" style="font-size:1vw">
+    <thead>
+      <tr >
+        <th><img src="{% static 'images/SRS.png' %}" width="50px" style="border-radius: 10px;box-shadow: 5px 5px 2px 2px #00053D;">&nbsp;&nbsp;&nbsp;&nbsp;SRS LIBRARY</th>
+        <th>Menu</th>
+        <th>Help</th>
+        <th>Have a Question?</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td> 
+        Far far away, <br>
+        behind the word<br>
+         mountains,<br>
+        far from the countries Vokalia and Consonantia.<br>
+        <i class="fa fa-twitter" aria-hidden="true" style="font-size: 24px;padding: 5px;"></i>
+        <i class="fa fa-facebook" aria-hidden="true" style="font-size: 24px;padding: 5px;"></i>
+        <i class="fa fa-google" aria-hidden="true" style="font-size: 24px;padding: 5px;"></i>
+      
+      </td>
+      <td>
+        
+          shop<br>
+          About<br>
+          Contact Us
+        
+      </td>
+      <td>
+        
+          Shipping Information<br>
+          Return & Exchange<br>
+          Terms and Conditions<br>
+          Privacy Policy
+          
+         
+      </td>
+      <td>
+        
+        <i class="fa fa-map-marker" aria-hidden="true" style="font-size: 24px;padding: 5px;"></i>203 Fake St. Mountain View,<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;San Francisco, California, USA<br>
+          <i class="fa fa-phone" aria-hidden="true" style="font-size: 24px;padding: 5px;"></i>+2 392 3929 210<br>
+          <i class="fa fa-envelope" aria-hidden="true" style="font-size: 24px;padding: 5px;"></i>info@yourdomain.com<br>
+          
+        
+      </td>
+      <td>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d15720.182640336743!2d76.5603823!3d9.9301555!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1663563191878!5m2!1sen!2sin" width="100vw" height="200vw" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </td>
+      
+      </tr>
+    </tbody>
+</table>
+</div>
+</div>
+
+</div>
+<div class="footer" style="background-color: #19A818;text-align: center;padding: 10px;font-family: Lucida Handwriting;">
+<img src="{% static 'images/srs.png' %}" width="50px" style="border-radius: 10px;box-shadow: 5px 5px 2px 2px #00053D;">&nbsp;&nbsp;&nbsp;&nbsp;
+ &copy; <span style="font-size: 1vw;">SRS LIBRARY.All rights Reserved </span>
+</div>
+
+
+
+<div id="loginModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+     
+     
+        <div class="modal-body">
+          <img src="{% static 'images/SRS.png' %}" width="80px" style="border-radius: 20px;box-shadow: 5px 5px 2px 2px #00053D;margin-left: 40%;">
+          <button type="button" class="close" data-dismiss="modal"> &times;</button>
+          <form name="myForm" action="{% url 'login_page' %}" class="was-validated" method="post">
+            {% csrf_token %}
+            <h2 style="text-align: center;margin-top: 30px;color:#19A818;font-family: Lucida Handwriting;">SIGN IN</h2>
+            <div class="form-group">
+                
+              <div class="form-group">
+                <label for="username"> Username:</label>
+                <input type="text" class="form-control" placeholder="Enter Username" name="username" id="name" required>
+                <div class="valid-feedback">Valid.</div>
+        <div class="invalid-feedback">Please fill out this field.</div>
+    
+              </div>
+                
+            <div class="form-group">
+              <label for="pwd">Password:</label>
+              <input type="password" class="form-control" placeholder="Enter password" id="pwd" name="pwd" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+              title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+              <div class="valid-feedback">Valid.</div>
+        <div class="invalid-feedback">Please fill out this field.</div>
+    
+            </div>
+           
+            <div class="form-group form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox"> Remember me
+              </label>
+            </div>
+            <button type="submit" style="width: 100%;" >SIGN IN</button><br><br>
+            <div>
+                <a href="sign_in.html" style="color: rgb(8, 2, 2);font-family: Lucida Handwriting;"> Not a Member</a>
+                <a data-toggle="modal" data-target="#registerModal" style="color:#19A818; padding-left: 10px;font-family: Lucida Handwriting;"><b>Sign Up</b></a>
+                </div><br>
+                
+          </form>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

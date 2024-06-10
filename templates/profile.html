@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="icon" type="image/x-icon" href="{% static 'images/SRS.png' %}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User/Profile</title>
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'images/srs.png' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+
+        img{
+           
+            border-radius: 75%;
+            
+
+        }
+        .s1{
+
+            margin-top: 30px;
+            border: 2px solid #19A818;
+            
+            margin-left: 35vw;
+            margin-right: 30vw;
+            text-align: center;
+            font-family: Lucida Handwriting;
+            border-radius: 20px;
+        }
+       button
+  {
+ background-color:#19A818;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 10px;
+  font-family: Lucida Handwriting;
+  align-items: center;
+  align-self: center;
+  
+}
+.animate{
+          
+          margin-left: 50%;
+          
+          
+  animation: rotation 8s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}
+    </style>
+</head>
+<body style="background-image: url(https://www.magneticmemorymethod.com/wp-content/uploads/2020/12/book-1024x640.jpg);background-repeat: no-repeat;background-size: cover;">
+    <div  style="margin-left: 15vw;">
+        <img src="{% static 'images/SRS.png' %}" width="80px" style="border-radius: 20px;box-shadow: 5px 5px 2px 2px #00053D;margin-left: 40%;" class="animate">
+</div>
+    <div class="s1" style="background-color:white">
+
+        
+        
+                {% if student.Photo %}
+
+                    <img src="{{ student.Photo.url}}" width="100%"><br>
+                    {{p.Teacher_Photo}}</td>
+                {% else %}
+                    <img src="https://www.genocideresearchhub.org.rw/wp-content/uploads/2021/12/1024px-User-avatar.svg_.png" width="40vw">
+                {% endif %}
+                <span style="color: #19A818;font-weight: bolder;font-family: Lucida Handwriting;font-size: 2vw;">{{student.fname}}&nbsp;{{student.lname}}</span><br><br><br>
+                
+                <div class="container" style="font-family: Lucida Handwriting;font-size: 1vw;padding-left: 5vw;">
+                    <div class="row">
+                        <div class="col-sm-2" style="text-align: right;"><strong>First Name :</strong></div>
+                        <div class="col-sm-10" style="text-align: left;">{{student.fname}}</div>
+                    </div><br>
+                    <div class="row">
+                        <div class="col-sm-2" style="text-align: right;"><strong>Last Name  :</strong></div>
+                        <div class="col-sm-10" style="text-align: left;">{{student.lname}}</div>
+                    </div><br>
+                    <div class="row">
+                        <div class="col-sm-2" style="text-align: right;"><strong>User Name  :</strong></div>
+                        <div class="col-sm-10" style="text-align: left;">{{student.username}}</div>
+                    </div><br>
+                    <div class="row">
+                        <div class="col-sm-2" style="text-align: right;"><strong>Address :</strong></div>
+                        <div class="col-sm-10" style="text-align: left;">{{student.Address}}</div>
+                    </div><br>
+                    <div class="row">
+                        <div class="col-sm-2" style="text-align: right;"><strong>Date Of Birth :</strong></div>
+                        <div class="col-sm-10" style="text-align: left;">{{student.dob}}</div>
+                    </div><br>
+                    
+                    <div class="row">
+                        <div class="col-sm-2" style="text-align: right;"><strong>Email :</strong></div>
+                        <div class="col-sm-10" style="text-align: left;">{{student.email}}</div>
+                    </div><br>
+                    <div class="row">
+                        <div class="col-sm-2" style="text-align: right;"><strong>Contact No :</strong></div>
+                        <div class="col-sm-10" style="text-align: left;">{{student.phone}}</div>
+                    </div><br>
+                    
+                    
+                </div>
+               
+                  
+                           
+            
+
+    
+      
+</div>
+<a  href="{% url 'user_home'   %}"><button type="submit" ><--BACK</button></a> 
+</body>
+</html>
